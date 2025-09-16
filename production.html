@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  Production page for Rodopa Ethical Meat
+  Describes the production process: from cell sourcing and materials to process architecture.
+  Summarises key points from Documents A (cell sources), D (materials & methods) and C (technical framework).
+  Includes a mermaid diagram of the seed train and banking strategy.
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Производство / Production – Rodopa Ethical Meat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', bone: '#F7F5F0', darkbg: '#2D2D2D', accent: '#8BA98D'
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <style>
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="text-primary font-semibold">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">English</button>
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">🌙</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="block text-primary font-semibold">Производство / Production</a>
+          <a href="traceability.html" class="block hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="block hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="block hover:text-primary">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="pt-20 pb-12 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6 lang-bg">Производство</h1>
+        <h1 class="text-4xl font-bold mb-6 lang-en">Production</h1>
+        <!-- Cell sources section -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Клетъчни източници и линии</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Cell sources & lines</h2>
+          <p class="mb-4 lang-bg">Подбираме клетки от говежди сателитни клетки (мускул) и преадипоцити (мазнини), които осигуряват традиционния вкус и текстура на суджук. Фокусът е върху серум‑фрий растеж, стабилен кариотип, висока диференциация и микоплазма‑негативност.</p>
+          <p class="mb-4 lang-en">We select cells from bovine satellite cells (muscle) and pre‑adipocytes (fat) that provide the traditional flavour and texture of sudzhuk. The focus is on serum‑free growth, stable karyotype, high differentiation and mycoplasma‑free status.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Миогенни клетки: миобласти / сателитни клетки</li>
+            <li class="lang-en">Myogenic cells: myoblasts / satellite cells</li>
+            <li class="lang-bg">Адипогенни клетки: преадипоцити от мастна тъкан</li>
+            <li class="lang-en">Adipogenic cells: pre‑adipocytes from adipose tissue</li>
+            <li class="lang-bg">Избягване на iPSC освен при необходимост</li>
+            <li class="lang-en">Avoiding iPSC unless necessary</li>
+          </ul>
+        </section>
+        <!-- Materials & Methods -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Материали и методи</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Materials & methods</h2>
+          <p class="mb-4 lang-bg">За производството използваме стерилни еднократни консумативи, перфузионни касети, ядливи скафолди, серум‑фрий среди и food‑grade газове. Осъществяваме мониторинг на pH/DO/температура, микробиологичен и химичен контрол, както и сензорни тестове.</p>
+          <p class="mb-4 lang-en">For production we use sterile single‑use consumables, perfusion cartridges, edible scaffolds, serum‑free media and food‑grade gases. We monitor pH/DO/temperature, perform microbiological and chemical control and sensory tests.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Еднократни полимерни консумативи и асептични свръзки</li>
+            <li class="lang-en">Single‑use polymer consumables and aseptic connectors</li>
+            <li class="lang-bg">Hollow‑fiber касети и сензори EHEDG дизайн</li>
+            <li class="lang-en">Hollow‑fiber cartridges and EHEDG‑designed sensors</li>
+            <li class="lang-bg">Ядливи скафолди: целулоза, алгинат, биополимери</li>
+            <li class="lang-en">Edible scaffolds: cellulose, alginate, biopolymers</li>
+            <li class="lang-bg">Серум‑фрий среди с food‑grade компоненти</li>
+            <li class="lang-en">Serum‑free media with food‑grade components</li>
+            <li class="lang-bg">Контрол на микробиология, ендотоксини и алергени</li>
+            <li class="lang-en">Monitoring microbiology, endotoxins and allergens</li>
+          </ul>
+        </section>
+        <!-- Process architecture section -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Технологична архитектура</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Process architecture</h2>
+          <p class="mb-4 lang-bg">Процесът е разделен на upstream (seed‑експанзия), биореакторна фаза (перфузия) и downstream (оформяне и стабилизиране). Използваме EHEDG принципи за хигиеничен дизайн, PAT сензори за pH/DO/глюкоза и интегрираме SCADA/MES за проследяване.</p>
+          <p class="mb-4 lang-en">The process is divided into upstream (seed expansion), bioreactor phase (perfusion) and downstream (assembly and stabilization). We apply EHEDG principles for hygienic design, PAT sensors for pH/DO/glucose and integrate SCADA/MES for traceability.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Upstream: thaw → rocking‑motion → stirred tanks → perfusion</li>
+            <li class="lang-en">Upstream: thaw → rocking‑motion → stirred tanks → perfusion</li>
+            <li class="lang-bg">Bioreactor: hollow‑fiber arrays за равномерен масообмен</li>
+            <li class="lang-en">Bioreactor: hollow‑fiber arrays for uniform mass transfer</li>
+            <li class="lang-bg">Downstream: сглобяване, сол/подправки, охлаждане, QC</li>
+            <li class="lang-en">Downstream: assembly, salting/spices, cooling, QC</li>
+          </ul>
+        </section>
+        <!-- Diagram: Seed train & bank -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Seed train & банкинг</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Seed train & banking</h2>
+          <p class="mb-4 lang-bg">Натрупването на клетки започва от работната банка (WCB), преминава през серия от биореактори с увеличаващ се обем и завършва с инокулиране на производствения модул.</p>
+          <p class="mb-4 lang-en">Cell amplification begins from the working cell bank (WCB), passes through a series of bioreactors with increasing volume and culminates in inoculation of the production module.</p>
+          <div class="mermaid">
+            flowchart TB
+              S0[WCB ампула] --> S1[Размразяване<br/>37°C/асептика]
+              S1 --> S2[Първична експанзия<br/>шейк фласки]
+              S2 --> S3[RM 5–50 L<br/>rocking‑motion]
+              S3 --> S4[STR N‑2<br/>50–200 L]
+              S4 --> S5[STR N‑1<br/>200–500 L]
+              S5 --> S6[Инокулиране N<br/>производство]
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS toggles -->
+    <script>
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

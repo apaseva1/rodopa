@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+  Science page for Rodopa Ethical Meat
+  Describes the scientific foundation behind cultivated meat:
+  - Four technological pillars
+  - Regulatory and safety context
+  - Key trends and innovations for 2024–2025
+  - Consumer acceptance and environmental considerations
+  - Includes an end‑to‑end flow diagram rendered with Mermaid.js
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Научна основа / Scientific Basis – Rodopa Ethical Meat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', bone: '#F7F5F0', darkbg: '#2D2D2D', accent: '#8BA98D'
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <style>
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Header (copied from index) -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="text-primary font-semibold">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">English</button>
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">🌙</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block text-primary font-semibold">Наука / Science</a>
+          <a href="production.html" class="block hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="block hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="block hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="block hover:text-primary">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="pt-20 pb-12 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6 lang-bg">Научна основа</h1>
+        <h1 class="text-4xl font-bold mb-6 lang-en">Scientific basis</h1>
+        <!-- Pillars -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Технологични оси</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Technological pillars</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Pillar: Cell lines -->
+            <div>
+              <h3 class="text-xl font-medium mb-2 lang-bg">Клетъчни линии</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Cell lines</h3>
+              <p class="text-sm lang-bg">Селекция и култивиране на миогенни и адипогенни говежди клетки за автентичен вкус и текстура. Включва създаване на master/working cell banks и контрол на микоплазма.</p>
+              <p class="text-sm lang-en">Selection and cultivation of myogenic and adipogenic bovine cells for authentic flavour and texture. Includes creation of master/working cell banks and mycoplasma control.</p>
+            </div>
+            <!-- Pillar: Serum-free media -->
+            <div>
+              <h3 class="text-xl font-medium mb-2 lang-bg">Серум‑фрий среди</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Serum‑free media</h3>
+              <p class="text-sm lang-bg">Разработване на хранителни среди без животински серуми – с food‑grade компоненти, растежни фактори и оптимизирани разходи.</p>
+              <p class="text-sm lang-en">Development of nutrient media without animal serum – using food‑grade components, growth factors and optimized costs.</p>
+            </div>
+            <!-- Pillar: Scaffolds -->
+            <div>
+              <h3 class="text-xl font-medium mb-2 lang-bg">Скафолди и структура</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Scaffolds & structure</h3>
+              <p class="text-sm lang-bg">Ядливи растителни матрици с ориентирана порестост и влакнесто подравняване, които поддържат клетките и задържат мазнини.</p>
+              <p class="text-sm lang-en">Edible plant‑based matrices with oriented porosity and fibrous alignment that support cells and retain fats.</p>
+            </div>
+            <!-- Pillar: Bioreactors -->
+            <div>
+              <h3 class="text-xl font-medium mb-2 lang-bg">Биореактори и перфузия</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Bioreactors & perfusion</h3>
+              <p class="text-sm lang-bg">Интензивно производство чрез perfüzionни „hollow‑fiber“ биореактори за сантиметрови дебелини, контрол на pH/DO и температурен режим.</p>
+              <p class="text-sm lang-en">Intensive production via perfusion “hollow‑fiber” bioreactors enabling centimetre‑thick tissues, controlling pH/DO and temperature.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Regulatory & Safety -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Регулаторна рамка и безопасност</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Regulation & safety</h2>
+          <p class="mb-4 lang-bg">Проектът се основава на рамките на ЕС и международните организации: EFSA е готова да оцени cell‑based храни, FAO/WHO публикува съответните насоки. Спазваме регламентите за нови храни (ЕС 2015/2283), хигиена (852/2004) и HACCP/Codex.</p>
+          <p class="mb-4 lang-en">The project is grounded in EU and global frameworks: EFSA has declared readiness to evaluate cell‑based foods, and FAO/WHO has published guidelines. We comply with the Novel Foods Regulation (EU 2015/2283), hygiene rules (852/2004) and HACCP/Codex standards.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">EFSA: научен колоквиум и готовност за оценка</li>
+            <li class="lang-en">EFSA: scientific colloquium and readiness for assessment</li>
+            <li class="lang-bg">FAO/WHO: карта на опасностите и контролни точки</li>
+            <li class="lang-en">FAO/WHO: hazard mapping and control points</li>
+            <li class="lang-bg">Нови храни (ЕС 2015/2283) и HACCP/ISO 22000</li>
+            <li class="lang-en">Novel Foods (EU 2015/2283) and HACCP/ISO 22000</li>
+          </ul>
+        </section>
+        <!-- Trends & Innovations -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Тенденции и иновации 2024–2025</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Trends & innovations 2024–2025</h2>
+          <p class="mb-4 lang-bg">Последните публикации демонстрират пробиви в перфузионните биореактори („hollow‑fiber“), серум‑фрий среди и структури скафолди. Тези технологии позволяват по‑бърз растеж, по‑ниска цена и създаване на дебели тъкани. Култивираната мазнина е ключов компонент за вкус и сочност.</p>
+          <p class="mb-4 lang-en">Recent publications showcase breakthroughs in perfusion bioreactors (hollow‑fiber), serum‑free media and structural scaffolds. These technologies enable faster growth, lower cost and creation of thick tissues. Cultivated fat is a key component for flavour and juiciness.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Hollow‑fiber перфузия: равномерна „микроциркулация“ и дебелина &gt; 1 cm</li>
+            <li class="lang-en">Hollow‑fiber perfusion: uniform “micro‑circulation” and thickness &gt; 1 cm</li>
+            <li class="lang-bg">Нововъзникващи серум‑фрий медии: намалени разходи и заместване на животинските серуми</li>
+            <li class="lang-en">Emerging serum‑free media: reduced costs and replacement of animal serum</li>
+            <li class="lang-bg">Скафолди: ядливи влакнести матрици за текстура и задържане на мазнини</li>
+            <li class="lang-en">Scaffolds: edible fibrous matrices for texture and fat retention</li>
+            <li class="lang-bg">Култивирана мазнина: усилва вкуса и аромата</li>
+            <li class="lang-en">Cultivated fat: enhances taste and aroma</li>
+          </ul>
+        </section>
+        <!-- Acceptance & LCA -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Приемливост и въздействие</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Acceptance & impact</h2>
+          <p class="mb-4 lang-bg">Мета‑анализи показват, че приемливостта на култивираното месо зависи най‑вече от вкуса и начина на представяне, а не от демографски фактори. Терминологията („култивирано“, „етично“) също влияе. Оценките на жизнения цикъл (LCA) варират според енергията и мащаба, но използването на зелена енергия и серум‑фрий технологии може да намали въздействието.</p>
+          <p class="mb-4 lang-en">Meta‑analyses show that acceptance of cultivated meat depends mostly on flavour and framing rather than demographics. Terminology (“cultivated”, “ethical”) also matters. Life cycle assessments (LCA) vary with energy and scale, but using green energy and serum‑free technologies can reduce the impact.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Вкусът и името са ключови за потребителите</li>
+            <li class="lang-en">Flavour and name are key for consumers</li>
+            <li class="lang-bg">LCA: въздействието зависи от енергията, медията и мащаба</li>
+            <li class="lang-en">LCA: impact depends on energy, media and scale</li>
+          </ul>
+        </section>
+        <!-- Diagram Section (E2E Flow) -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Поток на процеса</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Process flow</h2>
+          <p class="mb-4 lang-bg">Следната диаграма показва високо ниво на производствения поток – от клетъчните банки до дистрибуцията, с ключови контролни точки и проследимост.</p>
+          <p class="mb-4 lang-en">The diagram below shows a high‑level production flow – from cell banks to distribution, with key control points and traceability.</p>
+          <div class="mermaid">
+            flowchart TB
+              A[MCB/WCB<br/>Клетъчни банки] --> B[Seed Train<br/>Thaw→RM→STR]
+              B --> C[Перфузия HFB<br/>масив кухи влакна]
+              C --> D[Harvest<br/>тъкан]
+              D --> E[Assembly<br/>ядлив скафолд + mould]
+              E --> F[Сол/Подправки/Дим<br/>профил Rodopa]
+              F --> G[Охлаждане/Стабилизация]
+              G --> H[QC Release<br/>микро/ендотоксини/сензорика]
+              H --> I[Опаковка<br/>Vacuum/VSP или MAP]
+              I --> J[Студена верига<br/>0–4°C]
+              J --> K[Дистрибуция/3PL<br/>GS1 EPCIS събития]
+              K --> L[Ритейл/HORECA]
+
+              B -.-> Bc[(PAT:<br/>pH/DO/Glc/Lac)]
+              C -.-> Cc[(PAT:<br/>Debit/DO/Temp)]
+              H -.-> Hd[(QA/QC:<br/>панели/граници)]
+              I -.-> Id[(Етикет/1169/2011)]
+              K -.-> Kd[(EPCIS 2.0:<br/>GTIN/LOT/GLN/SSCC)]
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Footer (same as index) -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS toggles (same as index) -->
+    <script>
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

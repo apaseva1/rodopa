@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+  Contact page for Rodopa Ethical Meat
+  Provides ways to reach the project team for questions, proposals and investment inquiries.
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакт / Contact – Rodopa Ethical Meat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', bone: '#F7F5F0', darkbg: '#2D2D2D', accent: '#8BA98D'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="text-primary font-semibold">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">English</button>
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">🌙</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="block hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="block hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="block hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="block text-primary font-semibold">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main -->
+    <main class="pt-20 pb-12 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-6 lang-bg">Свържете се с нас</h1>
+        <h1 class="text-4xl font-bold mb-6 lang-en">Get in touch</h1>
+        <p class="mb-4 lang-bg">Ние сме отворени за въпроси, предложения и партньорства. Използвайте информацията по-долу, за да се свържете с нашия екип.</p>
+        <p class="mb-4 lang-en">We welcome questions, proposals and partnerships. Use the information below to contact our team.</p>
+        <div class="mt-8 grid gap-6">
+          <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow">
+            <h2 class="text-xl font-semibold mb-2 lang-bg">Обща информация</h2>
+            <h2 class="text-xl font-semibold mb-2 lang-en">General information</h2>
+            <p class="lang-bg">Електронна поща: <a href="mailto:info@ethicalmeat.bg" class="underline">info@ethicalmeat.bg</a></p>
+            <p class="lang-en">Email: <a href="mailto:info@ethicalmeat.bg" class="underline">info@ethicalmeat.bg</a></p>
+            <p class="lang-bg">Телефон: +359 (0)2 123 456</p>
+            <p class="lang-en">Phone: +359 (0)2 123 456</p>
+          </div>
+          <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow">
+            <h2 class="text-xl font-semibold mb-2 lang-bg">Инвеститори и партньорства</h2>
+            <h2 class="text-xl font-semibold mb-2 lang-en">Investors & partnerships</h2>
+            <p class="lang-bg">Свържете се директно с: <br/>Анна Пасева – <a href="mailto:a.paseva@g-i-l-c.com" class="underline">a.paseva@g-i-l-c.com</a> <br/>Иван Пасев – <a href="mailto:ivan.pasev@g-i-l-c.com" class="underline">ivan.pasev@g-i-l-c.com</a></p>
+            <p class="lang-en">Contact directly: <br/>Anna Paseva – <a href="mailto:a.paseva@g-i-l-c.com" class="underline">a.paseva@g-i-l-c.com</a> <br/>Ivan Pasev – <a href="mailto:ivan.pasev@g-i-l-c.com" class="underline">ivan.pasev@g-i-l-c.com</a></p>
+          </div>
+          <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow">
+            <h2 class="text-xl font-semibold mb-2 lang-bg">Адрес</h2>
+            <h2 class="text-xl font-semibold mb-2 lang-en">Address</h2>
+            <p class="lang-bg">Горна Оряховица, България (производствени съоръжения) <br/>София, България (офис)</p>
+            <p class="lang-en">Gorna Oryahovitsa, Bulgaria (production facilities) <br/>Sofia, Bulgaria (office)</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS toggles -->
+    <script>
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+  Traceability page for Rodopa Ethical Meat
+  Outlines distribution, cold chain and traceability systems.
+  Draws content from the logistics document and emphasises GS1/EPCIS standards.
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проследимост / Traceability – Rodopa Ethical Meat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', bone: '#F7F5F0', darkbg: '#2D2D2D', accent: '#8BA98D'
+            }
+          }
+        }
+      };
+    </script>
+    <script>
+      // Language toggling styles
+      document.addEventListener('DOMContentLoaded', () => {
+        // set default classes when loaded; actual toggling occurs in script at bottom
+      });
+    </script>
+    <style>
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="text-primary font-semibold">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">English</button>
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">🌙</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="block hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="block text-primary font-semibold">Проследимост / Traceability</a>
+          <a href="partners.html" class="block hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="block hover:text-primary">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main -->
+    <main class="pt-20 pb-12 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6 lang-bg">Проследимост и логистика</h1>
+        <h1 class="text-4xl font-bold mb-6 lang-en">Traceability & logistics</h1>
+        <!-- Cold chain and packaging -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Студена верига и опаковка</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Cold chain & packaging</h2>
+          <p class="mb-4 lang-bg">Нашата логистична рамка се основава на спазване или надграждане на регламентите 852/2004 и 853/2004 за съхранение и транспорт на храни от животински произход. Поддържаме температурен диапазон 0–4 °C със система за мониторинг и аларми. Опаковаме продуктите във вакуум/VSP или MAP без въглероден моноксид (CO), валидирайки газовите смеси за безопасност и shelf‑life.</p>
+          <p class="mb-4 lang-en">Our logistics framework adheres to or exceeds Regulations 852/2004 and 853/2004 for storage and transport of food of animal origin. We maintain a temperature range of 0–4 °C with monitoring and alarms. Products are packaged in vacuum/VSP or MAP without carbon monoxide (CO), validating gas mixtures for safety and shelf‑life.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Температурни логери с дистанционно наблюдение</li>
+            <li class="lang-en">Temperature loggers with remote monitoring</li>
+            <li class="lang-bg">Вакуум или MAP с O₂/CO₂/N₂; без CO</li>
+            <li class="lang-en">Vacuum or MAP with O₂/CO₂/N₂; no CO</li>
+            <li class="lang-bg">Контрол на a_w и pH за сушени/ферментирали продукти</li>
+            <li class="lang-en">Monitoring a_w and pH for dried/fermented products</li>
+          </ul>
+        </section>
+        <!-- Traceability & data -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Проследимост и данни</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Traceability & data</h2>
+          <p class="mb-4 lang-bg">Използваме стандарти GS1/EPCIS 2.0, които ни позволяват да документираме всяко събитие “какво–кога–къде–защо”. Всяка партида носи GTIN (идентификатор на продукта), LOT (номер партида), GLN (код на локацията) и SSCC (код на логистичната единица). Това гарантира, че можем да извършим изтегляне (recall) в рамките на 4 часа при необходимост.</p>
+          <p class="mb-4 lang-en">We use GS1/EPCIS 2.0 standards to record every event “what–when–where–why”. Each batch carries a GTIN (product identifier), LOT (batch number), GLN (location code) and SSCC (logistics unit code). This ensures we can perform a recall within four hours if necessary.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">GTIN: уникален продукт</li>
+            <li class="lang-en">GTIN: unique product</li>
+            <li class="lang-bg">LOT: идентификация на партида</li>
+            <li class="lang-en">LOT: batch identification</li>
+            <li class="lang-bg">GLN: идентификация на локация</li>
+            <li class="lang-en">GLN: location identification</li>
+            <li class="lang-bg">SSCC: код на транспортна единица</li>
+            <li class="lang-en">SSCC: logistics unit code</li>
+          </ul>
+          <p class="mt-4 text-sm lang-bg">EPCIS събития: Commission, Aggregation, Shipping/Receiving и Transformation се използват за обмен на данни между нас и нашите логистични партньори.</p>
+          <p class="mt-4 text-sm lang-en">EPCIS events: Commission, Aggregation, Shipping/Receiving and Transformation are used to share data between us and our logistics partners.</p>
+        </section>
+        <!-- Cybersecurity -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Киберсигурност и непрекъсваемост</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Cybersecurity & continuity</h2>
+          <p class="mb-4 lang-bg">Защитаваме логистичните си системи чрез сегментация по ISA/IEC 62443, поддържаме OT киберсигурност според NIST SP 800‑82 и изграждаме CSMS (Cyber Security Management System). Това гарантира, че данните са защитени и операциите не се прекъсват.</p>
+          <p class="mb-4 lang-en">We secure our logistics systems through segmentation according to ISA/IEC 62443, maintain OT cybersecurity per NIST SP 800‑82 and build a CSMS (Cyber Security Management System). This ensures data is protected and operations remain uninterrupted.</p>
+        </section>
+        <!-- Release & recall -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Освобождаване и изтегляне на партиди</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Batch release & recall</h2>
+          <p class="mb-4 lang-bg">Преди освобождаване на всяка партида, извършваме QC анализ – микробиология, ендотоксини, органолептика и правилно етикетиране. След това издаваме електронен сертификат за съответствие. Ако бъде открит проблем, изтегляме засегнатите единици в рамките на 4 часа, използвайки нашите GS1/EPCIS данни.</p>
+          <p class="mb-4 lang-en">Before releasing each batch, we perform QC analysis – microbiology, endotoxins, sensory and correct labelling. We then issue an electronic certificate of conformity. If an issue is identified, we recall the affected units within four hours using our GS1/EPCIS data.</p>
+        </section>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS toggles -->
+    <script>
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

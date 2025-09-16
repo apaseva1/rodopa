@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  Partners page for Rodopa Ethical Meat
+  Presents collaboration models and investment opportunities derived from the partnership proposal.
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Партньори / Partners – Rodopa Ethical Meat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', bone: '#F7F5F0', darkbg: '#2D2D2D', accent: '#8BA98D'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="text-primary font-semibold">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">English</button>
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">🌙</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="block hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="block hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="block text-primary font-semibold">Партньори / Partners</a>
+          <a href="contact.html" class="block hover:text-primary">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main -->
+    <main class="pt-20 pb-12 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6 lang-bg">Партньорски модели</h1>
+        <h1 class="text-4xl font-bold mb-6 lang-en">Partnership models</h1>
+        <!-- Models -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Опции за сътрудничество</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Collaboration options</h2>
+          <p class="mb-4 lang-bg">Rodopa Ethical Meat предлага три основни модела на партньорство, съобразени с вашето желание за ангажимент, риск и възвръщаемост. Всички варианти включват споделяне на експертиза и прозрачност.</p>
+          <p class="mb-4 lang-en">Rodopa Ethical Meat offers three principal partnership models, tailored to your desired level of engagement, risk and return. All options involve sharing expertise and full transparency.</p>
+          <div class="grid md:grid-cols-3 gap-6 text-sm">
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-medium mb-2 lang-bg">Оперативен партньор</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Operating partner</h3>
+              <p class="lang-bg">Rodopa предоставя марката и инфраструктура, а технологичният партньор – R&D, финансиране и пилотно производство. Създава се обща компания с разпределени дялове.</p>
+              <p class="lang-en">Rodopa provides the brand and infrastructure while the technology partner supplies R&D, funding and pilot production. A joint company is formed with distributed shares.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-medium mb-2 lang-bg">Лицензиране</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Licensing</h3>
+              <p class="lang-bg">Rodopa лицензира марката за етични продукти на дружество на партньора; получава фиксирана такса и процент от маржа, а партньорът управлява продажбата и растежа.</p>
+              <p class="lang-en">Rodopa licenses the brand for ethical products to the partner’s company; Rodopa receives a fixed fee and percentage of margin while the partner manages sales and growth.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-medium mb-2 lang-bg">Съвместно дружество (JV)</h3>
+              <h3 class="text-xl font-medium mb-2 lang-en">Joint venture (JV)</h3>
+              <p class="lang-bg">Създава се ново дружество със споделена собственост между Rodopa и партньора, като се споделят роли, инвестиции и печалби. Предвидени са buy‑out и vesting механизми.</p>
+              <p class="lang-en">A new company is created with shared ownership between Rodopa and the partner, with shared roles, investments and profits. Buy‑out and vesting mechanisms are included.</p>
+            </div>
+          </div>
+        </section>
+        <!-- Roadmap / milestones -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">План и етапи</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Roadmap & milestones</h2>
+          <p class="mb-4 lang-bg">Предлагаме структурирана пътна карта за Proof‑of‑Concept и MVP, разделена на пет етапа: подготовка и R&D, пилотни дегустации, регулаторно съответствие, MVP производство и продажби, и мащабиране. При всяка стъпка се отключват vesting акции и инвестициите се използват ефективно.</p>
+          <p class="mb-4 lang-en">We propose a structured roadmap for Proof‑of‑Concept and MVP, divided into five stages: preparation & R&D, pilot tastings, regulatory compliance, MVP production & sales, and scaling. At each step vesting shares are unlocked and investments are used effectively.</p>
+          <ul class="list-decimal pl-5 space-y-3 text-sm">
+            <li class="lang-bg"><strong>Етап 1:</strong> 3–6 месеца – R&D, екип, лаборатория, прототип</li>
+            <li class="lang-en"><strong>Stage 1:</strong> 3–6 months – R&D, team, lab, prototype</li>
+            <li class="lang-bg"><strong>Етап 2:</strong> 2–3 месеца – пилотни дегустации, фокус групи, обратна връзка</li>
+            <li class="lang-en"><strong>Stage 2:</strong> 2–3 months – pilot tastings, focus groups, feedback</li>
+            <li class="lang-bg"><strong>Етап 3:</strong> 3–6 месеца – регулаторно подаване и съответствие</li>
+            <li class="lang-en"><strong>Stage 3:</strong> 3–6 months – regulatory submission & compliance</li>
+            <li class="lang-bg"><strong>Етап 4:</strong> 6 месеца – MVP производство, първи продажби, marketing launch</li>
+            <li class="lang-en"><strong>Stage 4:</strong> 6 months – MVP production, initial sales, marketing launch</li>
+            <li class="lang-bg"><strong>Етап 5:</strong> 12–24 месеца – мащабиране, оптимизация, износ</li>
+            <li class="lang-en"><strong>Stage 5:</strong> 12–24 months – scaling, optimization, export</li>
+          </ul>
+        </section>
+        <!-- Investment narrative -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Инвестиционна възможност</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Investment opportunity</h2>
+          <p class="mb-4 lang-bg">Култивираното месо е бързо растяща индустрия с очакван пазар от над 25 млрд. евро до 2030 г. България има шанс да бъде пионер чрез Rodopa. Търсим начален капитал за R&D и MVP (~350 000 €), като инвеститорите получават дялово участие и достъп до нашия IP.</p>
+          <p class="mb-4 lang-en">Cultivated meat is a rapidly growing industry with an expected market over €25 billion by 2030. Bulgaria has a chance to be a pioneer via Rodopa. We seek seed funding for R&D and MVP (~€350,000), offering investors equity and access to our IP.</p>
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li class="lang-bg">Справедливо разпределение на дялове и опции</li>
+            <li class="lang-en">Fair distribution of equity and options</li>
+            <li class="lang-bg">Потенциален достъп до европейски грантове</li>
+            <li class="lang-en">Potential access to European grants</li>
+            <li class="lang-bg">Възможност за франчайзинг и износ</li>
+            <li class="lang-en">Opportunity for franchising and export</li>
+          </ul>
+        </section>
+        <!-- Call to action -->
+        <section class="text-center">
+          <h2 class="text-2xl font-semibold mb-4 lang-bg">Готови ли сте да се включите?</h2>
+          <h2 class="text-2xl font-semibold mb-4 lang-en">Ready to get involved?</h2>
+          <p class="mb-4 lang-bg">Свържете се с нашия екип, за да обсъдим конкретни стъпки и възможности. Нека заедно изведем Rodopa Ethical Meat на световната сцена.</p>
+          <p class="mb-4 lang-en">Contact our team to discuss concrete steps and opportunities. Let’s bring Rodopa Ethical Meat to the global stage together.</p>
+          <a href="contact.html" class="inline-block px-5 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition">Контакт / Contact</a>
+        </section>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS toggles -->
+    <script>
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

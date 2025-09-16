@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--
+  This is the landing page for the Rodopa Ethical Meat project.  
+  It follows the design guidelines agreed upon with the user:  
+  - Bilingual (Bulgarian by default, English toggle)
+  - Light/dark mode support via Tailwind's class-based dark mode
+  - Clean, modern layout with a responsive header and sections
+  - Use of the uploaded Rodopa logo (assets/rodopa-logo.svg)
+  - Navigation to secondary pages describing the science, production process,
+    traceability and partnership opportunities.
+-->
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rodopa Ethical Meat</title>
+    <!-- Tailwind via CDN configured for dark mode and custom colours -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#D16E47', // terracotta
+              bone: '#F7F5F0',   // warm bone white background
+              darkbg: '#2D2D2D', // dark slate for dark mode
+              accent: '#8BA98D'  // soft green accent
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Mermaid for in‑page diagrams (if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <style>
+      /* Simple language toggling: default Bulgarian (lang-bg), optional English (lang-en) */
+      .lang-en { display: none; }
+      body.lang-en .lang-en { display: block; }
+      body.lang-en .lang-bg { display: none; }
+      body.lang-bg .lang-bg { display: block; }
+      body.lang-bg .lang-en { display: none; }
+    </style>
+  </head>
+  <body id="body" class="lang-bg bg-bone text-neutral-800 dark:bg-darkbg dark:text-bone transition-colors duration-300">
+    <!-- Fixed header with navigation and toggles -->
+    <header class="fixed top-0 inset-x-0 bg-white/90 dark:bg-darkbg/90 backdrop-blur shadow-sm z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/rodopa-logo.svg" alt="Rodopa Ethical Meat Logo" class="h-10 w-auto" />
+            <span class="ml-2 text-xl font-semibold tracking-tight">Rodopa Ethical Meat</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+          <!-- Language toggle -->
+          <button id="langToggle" class="px-3 py-1 text-sm rounded-lg border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle language">
+            English
+          </button>
+          <!-- Dark mode toggle -->
+          <button id="darkToggle" class="p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle dark mode">
+            🌙
+          </button>
+          <!-- Mobile menu button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-primary hover:text-white transition" aria-label="Toggle menu">
+            ☰
+          </button>
+        </div>
+      </div>
+      <!-- Mobile nav panel -->
+      <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-darkbg border-t border-neutral-200 dark:border-neutral-700">
+        <nav class="px-4 py-4 space-y-2 text-sm font-medium">
+          <a href="science.html" class="block hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="block hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="block hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="block hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="block hover:text-primary">Контакт / Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main content wrapper -->
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 relative bg-gradient-to-b from-bone to-neutral-200 dark:from-darkbg dark:to-neutral-800">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 lang-bg">Етично месо, създадено с грижа</h1>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 lang-en">Ethical meat, crafted with care</h1>
+        <p class="max-w-2xl text-lg mb-8 lang-bg">Съчетавайки българска традиция и иновации в клетъчно култивирано месо, Rodopa Ethical Meat предлага устойчив продукт с автентичен вкус и проследим произход.</p>
+        <p class="max-w-2xl text-lg mb-8 lang-en">Combining Bulgarian tradition and innovation in cell‑cultured meat, Rodopa Ethical Meat offers a sustainable product with authentic flavour and transparent provenance.</p>
+        <div class="flex space-x-4">
+          <!-- Replace escaped Unicode sequence with actual Bulgarian text -->
+          <a href="science.html" class="px-5 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition">Опознайте науката</a>
+          <a href="science.html" class="px-5 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition">Learn the science</a>
+        </div>
+      </section>
+      <!-- About / Ethos Section -->
+      <section class="py-16 px-6 bg-white dark:bg-neutral-900">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-3xl font-semibold mb-4 lang-bg">За Rodopa Ethical Meat</h2>
+            <h2 class="text-3xl font-semibold mb-4 lang-en">About Rodopa Ethical Meat</h2>
+            <p class="lang-bg mb-4">Rodopa Ethical Meat е проект за култивирано месо, вдъхновен от автентичния вкус на Горнооряховски суджук. Нашата мисия е да създадем етичен продукт, който уважава животните, природата и традициите, докато внедрява най-новите научни технологии.</p>
+            <p class="lang-en mb-4">Rodopa Ethical Meat is a cultivated meat project inspired by the authentic flavour of Gornooryahovski sudzhuk. Our mission is to create an ethical product that respects animals, nature and tradition while harnessing cutting‑edge scientific technology.</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li class="lang-bg">Създаден в България, с глобална визия</li>
+              <li class="lang-en">Born in Bulgaria with a global vision</li>
+              <li class="lang-bg">Вдъхновен от наследството на Rodopa</li>
+              <li class="lang-en">Inspired by the legacy of Rodopa</li>
+              <li class="lang-bg">Устойчив, проследим и безопасен</li>
+              <li class="lang-en">Sustainable, traceable and safe</li>
+            </ul>
+          </div>
+          <div class="relative">
+            <!-- Placeholder hero illustration: a gradient block that can be replaced with a real image -->
+            <div class="w-full h-56 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/40 dark:from-primary/30 dark:to-primary/50 flex items-center justify-center">
+              <span class="text-primary text-6xl">🥩</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why Ethical Section -->
+      <section class="py-16 px-6 bg-neutral-50 dark:bg-neutral-800">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-3xl font-semibold mb-4 lang-bg">Защо етично?</h2>
+          <h2 class="text-3xl font-semibold mb-4 lang-en">Why ethical?</h2>
+          <p class="mb-8 lang-bg">Етичното месо означава грижа за животните, намаляване на екологичния отпечатък и прозрачност от клетка до маса. Нашите продукти се произвеждат без кланица, с използване на серум-фрий среди и устойчиви ресурси.</p>
+          <p class="mb-8 lang-en">Ethical meat means caring for animals, reducing environmental impact and ensuring transparency from cell to table. Our products are made without slaughter, using serum‑free media and sustainable resources.</p>
+          <div class="grid md:grid-cols-3 gap-6 text-left">
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-semibold mb-2 lang-bg">Благосъстояние на животните</h3>
+              <h3 class="text-xl font-semibold mb-2 lang-en">Animal welfare</h3>
+              <p class="text-sm lang-bg">Отделяме тъкани чрез неинвазивни биопсии от здрави животни и никога не използваме серуми. Така създаваме месо без страдание.</p>
+              <p class="text-sm lang-en">We obtain tissues via non‑invasive biopsies from healthy animals and never use animal serum, creating meat without suffering.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-semibold mb-2 lang-bg">Устойчивост</h3>
+              <h3 class="text-xl font-semibold mb-2 lang-en">Sustainability</h3>
+              <p class="text-sm lang-bg">Култивираното месо има потенциал да намали потреблението на земя и вода и да ограничи емисиите. Ние използваме зелена енергия и локални компоненти.</p>
+              <p class="text-sm lang-en">Cultivated meat has the potential to reduce land and water use and cut emissions. We use green energy and locally sourced components.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow hover:shadow-md transition">
+              <h3 class="text-xl font-semibold mb-2 lang-bg">Прозрачност</h3>
+              <h3 class="text-xl font-semibold mb-2 lang-en">Transparency</h3>
+              <p class="text-sm lang-bg">Системата ни за проследимост на GS1/EPCIS гарантира пълна видимост за всяка партида — от клетъчната банка до опаковката и доставка.</p>
+              <p class="text-sm lang-en">Our GS1/EPCIS traceability system ensures full visibility for every batch — from cell bank to packaging and delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Explore Section -->
+      <section class="py-16 px-6 bg-white dark:bg-neutral-900">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-3xl font-semibold mb-4 lang-bg">Изследвайте повече</h2>
+          <h2 class="text-3xl font-semibold mb-4 lang-en">Explore more</h2>
+          <p class="mb-8 lang-bg">Разгледайте нашите страници, за да научите повече за науката, производството, логистиката и възможностите за сътрудничество.</p>
+          <p class="mb-8 lang-en">Browse our pages to learn more about the science, production, logistics and collaboration opportunities.</p>
+          <div class="grid md:grid-cols-4 gap-6">
+            <a href="science.html" class="p-6 bg-neutral-50 dark:bg-neutral-800 rounded-xl shadow hover:shadow-md transition flex flex-col items-center">
+              <span class="text-3xl mb-2">🔬</span>
+              <span class="font-medium lang-bg">Наука</span>
+              <span class="font-medium lang-en">Science</span>
+            </a>
+            <a href="production.html" class="p-6 bg-neutral-50 dark:bg-neutral-800 rounded-xl shadow hover:shadow-md transition flex flex-col items-center">
+              <span class="text-3xl mb-2">🏭</span>
+              <span class="font-medium lang-bg">Производство</span>
+              <span class="font-medium lang-en">Production</span>
+            </a>
+            <a href="traceability.html" class="p-6 bg-neutral-50 dark:bg-neutral-800 rounded-xl shadow hover:shadow-md transition flex flex-col items-center">
+              <span class="text-3xl mb-2">📦</span>
+              <span class="font-medium lang-bg">Проследимост</span>
+              <span class="font-medium lang-en">Traceability</span>
+            </a>
+            <a href="partners.html" class="p-6 bg-neutral-50 dark:bg-neutral-800 rounded-xl shadow hover:shadow-md transition flex flex-col items-center">
+              <span class="text-3xl mb-2">🤝</span>
+              <span class="font-medium lang-bg">Партньори</span>
+              <span class="font-medium lang-en">Partners</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-100 dark:bg-neutral-800 py-8">
+      <div class="max-w-5xl mx-auto px-4 text-sm flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+        <div>
+          <p class="lang-bg">© 2025 Rodopa Ethical Meat. Всички права запазени.</p>
+          <p class="lang-en">© 2025 Rodopa Ethical Meat. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="science.html" class="hover:text-primary">Наука / Science</a>
+          <a href="production.html" class="hover:text-primary">Производство / Production</a>
+          <a href="traceability.html" class="hover:text-primary">Проследимост / Traceability</a>
+          <a href="partners.html" class="hover:text-primary">Партньори / Partners</a>
+          <a href="contact.html" class="hover:text-primary">Контакт / Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Script for toggles -->
+    <script>
+      // Language toggle function
+      document.getElementById('langToggle').addEventListener('click', () => {
+        const body = document.getElementById('body');
+        if (body.classList.contains('lang-bg')) {
+          body.classList.remove('lang-bg');
+          body.classList.add('lang-en');
+          document.getElementById('langToggle').innerText = 'Български';
+        } else {
+          body.classList.remove('lang-en');
+          body.classList.add('lang-bg');
+          document.getElementById('langToggle').innerText = 'English';
+        }
+      });
+      // Dark mode toggle function
+      document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+      // Mobile menu toggle
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
